@@ -1,27 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CourcesModule } from './cources/cources.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-
-
+import { CoursesModule } from './courses/courses.module';
+import { CoursesService } from './courses/services/courses.service';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-
+    HomeComponent,
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    CourcesModule
+    // CoursesModule
   ],
-  providers: [],
+  providers: [
+    // CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

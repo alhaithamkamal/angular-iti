@@ -11,18 +11,26 @@
         <button type="button" class="btn btn-primary mb-2">Search</button>
       </form>
     </div>
-    <div class="col-6"> 
-      <a class="btn btn-primary float-right">New Course</a>
+    <div class="col-3">
+      <select name="limit" id="limit" (change)="onLimitChange($event)">
+        <option value="10">Default</option>
+        <option value="1">1</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <a class="btn btn-primary float-right" [routerLink]="['/courses', 'new']">New Course</a>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-6">
-      <app-cource-list></app-cource-list>
+      <app-courses-list></app-courses-list>
     </div>
 
     <div class="col-6">
-      <app-cource-details></app-cource-details>
+      <router-outlet></router-outlet>
     </div>
   </div>
 
